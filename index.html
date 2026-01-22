@@ -384,8 +384,14 @@
 </head>
 
 <body>
+  <div class="aura" aria-hidden="true"></div>
+
   <header class="nav">
     <div class="container nav-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+      </div>
+
       <nav class="nav-links">
         <a class="pill" href="#about">About</a>
         <a class="pill" href="#skills">Skills</a>
@@ -400,11 +406,14 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-grid">
+
+        <!-- LEFT -->
         <div class="card hero-main reveal">
           <h1>
             I build <span class="accent">reliable cloud systems</span><br/>
             and ship automation that scales.
           </h1>
+
           <p class="lead">
             Hi, I’m <strong>Bhargav Vaddepally</strong> — a DevOps + Python engineer focused on
             <strong>CI/CD</strong>, <strong>Kubernetes</strong>, <strong>AWS</strong>,
@@ -423,45 +432,47 @@
             </a>
           </div>
         </div>
+
+        <!-- RIGHT (replaces Fast links) -->
+        <aside class="card hero-side reveal">
           <div class="stat">
-            <aside class="card hero-side reveal">
-              <div class="stat">
-                <div class="k">Let’s Connect</div>
-            
-                <div class="v" style="display:grid; gap:14px; margin-top:14px;">
-                  
-                  <div style="display:flex; gap:12px; align-items:center;">
-                    <span class="mono">📍</span>
-                    <span>Carbondale, Illinois</span>
-                  </div>
-            
-                  <div style="display:flex; gap:12px; align-items:center;">
-                    <span class="mono">📞</span>
-                    <span>618&nbsp;434&nbsp;6085</span>
-                  </div>
-            
-                  <div style="display:flex; gap:12px; align-items:center;">
-                    <span class="mono">✉️</span>
-                    <span>vaddepallybhargav99@gmail.com</span>
-                  </div>
-            
-                  <div style="display:flex; gap:12px; align-items:center;">
-                    <span class="mono">in</span>
-                    <a href="https://www.linkedin.com/in/YOUR_LINKEDIN"
-                       target="_blank"
-                       rel="noreferrer"
-                       style="color:rgba(255,255,255,.9); font-weight:700;">
-                      LinkedIn Profile ↗
-                    </a>
-                  </div>
-            
-                </div>
+            <div class="k">Let’s Connect</div>
+
+            <div class="v" style="display:grid; gap:14px; margin-top:14px; color:rgba(255,255,255,.86);">
+
+              <div style="display:flex; gap:12px; align-items:center;">
+                <span class="mono">📍</span>
+                <span>Carbondale, Illinois</span>
               </div>
-            </aside>
-            
+
+              <div style="display:flex; gap:12px; align-items:center;">
+                <span class="mono">📞</span>
+                <a href="tel:+16184346085" style="font-weight:700; color:rgba(255,255,255,.9);">
+                  618 434 6085
+                </a>
+              </div>
+
+              <div style="display:flex; gap:12px; align-items:center;">
+                <span class="mono">✉️</span>
+                <a href="mailto:vaddepallybhargav99@gmail.com" style="font-weight:700; color:rgba(255,255,255,.9);">
+                  vaddepallybhargav99@gmail.com
+                </a>
+              </div>
+
+              <div style="display:flex; gap:12px; align-items:center;">
+                <span class="mono">in</span>
+                <a href="https://www.linkedin.com/in/YOUR_LINKEDIN"
+                   target="_blank"
+                   rel="noreferrer"
+                   style="font-weight:700; color:rgba(255,255,255,.9);">
+                  LinkedIn Profile ↗
+                </a>
+              </div>
+
             </div>
           </div>
         </aside>
+
       </div>
     </section>
 
@@ -636,18 +647,17 @@
             Share the job link and I’ll respond with a tailored alignment.
           </p>
           <div class="cta-row" style="margin-top:14px;">
-            <a class="btn btn-primary" href="mailto:YOUR_EMAIL@example.com">Email Me</a>
+            <a class="btn btn-primary" href="mailto:vaddepallybhargav99@gmail.com">Email Me</a>
             <a class="btn btn-ghost" href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noreferrer">LinkedIn ↗</a>
           </div>
         </div>
 
         <div class="item reveal">
           <h3>Quick info</h3>
-          <p style="margin-bottom:10px;">Replace these placeholders:</p>
-          <div class="tags">
-            <span class="tag">Email: YOUR_EMAIL@example.com</span>
-            <span class="tag">GitHub: YOUR_GITHUB</span>
-            <span class="tag">Location: USA</span>
+          <div class="tags" style="margin-top:10px;">
+            <span class="tag">Email: vaddepallybhargav99@gmail.com</span>
+            <span class="tag">Phone: 6184346085</span>
+            <span class="tag">Location: Carbondale, IL</span>
             <span class="tag">Open to: DevOps / SRE</span>
           </div>
         </div>
@@ -655,7 +665,7 @@
     </section>
 
     <div class="footer">
-      Built with GitHub Pages • Clean engineering, modern aesthetics • © <span id="year"></span> Sunny
+      Built with GitHub Pages • Clean engineering, modern aesthetics • © <span id="year"></span> Bhargav Vaddepally
     </div>
   </main>
 
