@@ -2,702 +2,468 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DevOps & Python Developer Portfolio" />
-  <meta name="theme-color" content="#0b1020" />
-  <title>Bhargav Vaddepally | DevOps & Python</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Bhargav Vaddepally — Senior Python Engineer | Cloud, Microservices, AWS, Kubernetes" />
+  <title>Bhargav Vaddepally | Senior Python Engineer</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --bg0:#070A12;
-      --bg1:#0b1020;
-      --card: rgba(255,255,255,.06);
-      --card2: rgba(255,255,255,.10);
-      --stroke: rgba(255,255,255,.12);
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.65);
-      --muted2: rgba(255,255,255,.48);
-
-      --a1:#7C3AED;   /* violet */
-      --a2:#22C55E;   /* green  */
-      --a3:#06B6D4;   /* cyan   */
-      --a4:#F97316;   /* orange */
-
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
-      --radius: 22px;
-      --radius2: 16px;
-    }
-
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
-    body{
-      margin:0;
-      font-family:Manrope, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      color:var(--text);
-      background: radial-gradient(1200px 900px at 18% 10%, rgba(124,58,237,.28), transparent 55%),
-                  radial-gradient(1100px 900px at 85% 22%, rgba(6,182,212,.22), transparent 55%),
-                  radial-gradient(900px 800px at 20% 85%, rgba(34,197,94,.18), transparent 50%),
-                  radial-gradient(1200px 900px at 88% 88%, rgba(249,115,22,.16), transparent 55%),
-                  linear-gradient(180deg, var(--bg0), var(--bg1));
-      overflow-x:hidden;
-    }
-
-    /* Subtle animated “aura” */
-    .aura{
-      position:fixed; inset:-40vh -40vw;
-      background:
-        radial-gradient(closest-side at 30% 30%, rgba(124,58,237,.20), transparent 55%),
-        radial-gradient(closest-side at 70% 35%, rgba(6,182,212,.17), transparent 55%),
-        radial-gradient(closest-side at 40% 75%, rgba(34,197,94,.14), transparent 55%),
-        radial-gradient(closest-side at 70% 80%, rgba(249,115,22,.12), transparent 55%);
-      filter: blur(30px);
-      animation: drift 16s ease-in-out infinite alternate;
-      z-index:-1;
-      opacity:.9;
-      transform: translateZ(0);
-    }
-    @keyframes drift{
-      from{ transform: translate3d(-2%, -1%, 0) scale(1); }
-      to{ transform: translate3d(2%, 2%, 0) scale(1.05); }
-    }
-
-    a{ color:inherit; text-decoration:none; }
-
-    .container{
-      width:min(1120px, 92vw);
-      margin:0 auto;
-    }
-
-    /* Top Nav */
-    .nav{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(14px);
-      background: linear-gradient(180deg, rgba(7,10,18,.78), rgba(7,10,18,.40));
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
-    .nav-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:14px 0;
-      gap:14px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight:800;
-      letter-spacing:.2px;
-    }
-    .logo{
-      width:34px; height:34px; border-radius:12px;
-      background: linear-gradient(135deg, var(--a1), var(--a3));
-      box-shadow: 0 10px 25px rgba(124,58,237,.25);
-      position:relative;
-      border:1px solid rgba(255,255,255,.12);
-    }
-    .logo::after{
-      content:"";
-      position:absolute; inset:7px;
-      border-radius:10px;
-      background: linear-gradient(135deg, rgba(255,255,255,.25), rgba(255,255,255,.08));
-      transform: rotate(8deg);
-    }
-    .nav-links{
-      display:flex; flex-wrap:wrap;
-      gap:10px;
-      justify-content:flex-end;
-    }
-    .pill{
-      padding:10px 12px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      color:var(--muted);
-      font-weight:700;
-      font-size:13px;
-      transition: transform .18s ease, background .18s ease, color .18s ease;
-    }
-    .pill:hover{
-      transform: translateY(-1px);
-      background: rgba(255,255,255,.07);
-      color:rgba(255,255,255,.9);
-    }
-
-    /* Hero */
-    .hero{
-      padding:58px 0 22px;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:22px;
-      align-items:stretch;
-    }
-    @media (max-width: 900px){
-      .hero-grid{ grid-template-columns: 1fr; }
-    }
-
-    .card{
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow: var(--shadow);
-    }
-    .hero-main{ padding:28px; position:relative; overflow:hidden; }
-    .hero-main::before{
-      content:"";
-      position:absolute;
-      width:420px; height:420px;
-      background: radial-gradient(circle at 30% 30%, rgba(124,58,237,.35), transparent 60%),
-                  radial-gradient(circle at 60% 70%, rgba(6,182,212,.22), transparent 55%);
-      filter: blur(18px);
-      right:-180px; top:-220px;
-      opacity:.9;
-    }
-
-    .eyebrow{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 12px;
-      border-radius:999px;
-      background: rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.10);
-      color:var(--muted);
-      font-weight:700;
-      font-size:13px;
-    }
-    .dot{
-      width:9px; height:9px; border-radius:999px;
-      background: var(--a2);
-      box-shadow: 0 0 0 5px rgba(34,197,94,.12);
-    }
-    h1{
-      margin:14px 0 10px;
-      font-size:46px;
-      line-height:1.05;
-      letter-spacing:-.8px;
-    }
-    @media (max-width: 520px){
-      h1{ font-size:38px; }
-    }
-    .lead{
-      margin:0;
-      font-size:16px;
-      line-height:1.6;
-      color:var(--muted);
-      max-width: 60ch;
-    }
-    .accent{
-      background: linear-gradient(90deg, var(--a3), var(--a1), var(--a4));
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
-    }
-
-    .cta-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:18px;
-      align-items:center;
-    }
-    .btn{
-      border:none;
-      cursor:pointer;
-      font-family:inherit;
-      font-weight:800;
-      letter-spacing:.1px;
-      padding:12px 14px;
-      border-radius: 14px;
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      transition: transform .18s ease, filter .18s ease, background .18s ease;
-    }
-    .btn-primary{
-      color:#0b1020;
-      background: linear-gradient(135deg, rgba(6,182,212,1), rgba(124,58,237,1));
-      box-shadow: 0 18px 45px rgba(124,58,237,.18);
-    }
-    .btn-primary:hover{ transform: translateY(-1px); filter: brightness(1.03); }
-    .btn-ghost{
-      color:rgba(255,255,255,.9);
-      background: rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.12);
-    }
-    .btn-ghost:hover{ transform: translateY(-1px); background: rgba(255,255,255,.08); }
-
-    .mini{
-      font-size:13px; color:var(--muted2);
-      display:flex; gap:14px; flex-wrap:wrap;
-      margin-top:14px;
-    }
-    .mini strong{ color:rgba(255,255,255,.86); }
-
-    /* Right hero card */
-    .hero-side{ padding:18px; display:flex; flex-direction:column; gap:12px; }
-    .stat{
-      padding:14px;
-      border-radius: var(--radius2);
-      background: rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.10);
-    }
-    .stat .k{ font-weight:900; font-size:14px; color:rgba(255,255,255,.90); }
-    .stat .v{ margin-top:6px; color:var(--muted); font-size:13px; line-height:1.55; }
-    .badges{
-      display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;
-    }
-    .chip{
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      color:var(--muted);
-      font-weight:800;
-      font-size:12px;
-    }
-    .chip.glow{
-      background: linear-gradient(135deg, rgba(124,58,237,.20), rgba(6,182,212,.14));
-      border:1px solid rgba(255,255,255,.14);
-      color: rgba(255,255,255,.84);
-    }
-
-    /* Sections */
-    section{ padding:26px 0; }
-    .section-head{
-      display:flex; align-items:flex-end; justify-content:space-between;
-      gap:12px; margin-bottom:14px;
-    }
-    .section-title{
-      font-size:18px;
-      font-weight:900;
-      letter-spacing:-.3px;
-      margin:0;
-    }
-    .section-sub{
-      margin:0;
-      color:var(--muted);
-      font-weight:700;
-      font-size:13px;
-    }
-
-    .grid-3{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-    }
-    @media (max-width: 980px){ .grid-3{ grid-template-columns: 1fr; } }
-
-    .item{
-      padding:18px;
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.10);
-      transition: transform .2s ease, background .2s ease, border-color .2s ease;
-      position:relative;
-      overflow:hidden;
-    }
-    .item:hover{
-      transform: translateY(-2px);
-      background: rgba(255,255,255,.06);
-      border-color: rgba(255,255,255,.16);
-    }
-    .item h3{ margin:0 0 6px; font-size:15px; font-weight:900; }
-    .item p{ margin:0; color:var(--muted); font-size:13px; line-height:1.6; }
-    .tags{ margin-top:10px; display:flex; flex-wrap:wrap; gap:8px; }
-    .tag{
-      font-size:12px;
-      color:rgba(255,255,255,.78);
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-    }
-
-    /* Timeline */
-    .timeline{
-      display:grid;
-      gap:12px;
-    }
-    .tl{
-      padding:18px;
-      border-radius: var(--radius);
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      position:relative;
-    }
-    .tl .top{
-      display:flex; flex-wrap:wrap;
-      gap:10px; align-items:center; justify-content:space-between;
-      margin-bottom:8px;
-    }
-    .tl .role{ font-weight:900; }
-    .tl .meta{ color:var(--muted); font-weight:800; font-size:12px; }
-    .tl ul{
-      margin:10px 0 0;
-      padding-left: 18px;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.7;
-    }
-
-    /* Contact */
-    .contact{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-    }
-    @media (max-width: 900px){ .contact{ grid-template-columns: 1fr; } }
-
-    .footer{
-      padding:26px 0 44px;
-      color:var(--muted2);
-      font-weight:700;
-      font-size:12px;
-      text-align:center;
-    }
-
-    /* Reveal animation */
-    .reveal{
-      opacity:0;
-      transform: translateY(10px);
-      transition: opacity .55s ease, transform .55s ease;
-    }
-    .reveal.show{
-      opacity:1;
-      transform: translateY(0);
-    }
-
-    /* Small helper */
-    .mono{
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      font-size: 12px;
-      color: rgba(255,255,255,.72);
-      padding: 3px 8px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.10);
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <div class="aura" aria-hidden="true"></div>
+  <!-- Top Progress Bar -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__bar" id="scrollBar"></div>
+  </div>
 
-  <header class="nav">
-    <div class="container nav-inner">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-      </div>
+  <!-- Header / Nav -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="Go to top">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">Bhargav Vaddepally</span>
+      </a>
 
-      <nav class="nav-links">
-        <a class="pill" href="#about">About</a>
-        <a class="pill" href="#skills">Skills</a>
-        <a class="pill" href="#projects">Projects</a>
-        <a class="pill" href="#experience">Experience</a>
-        <a class="pill" href="#contact">Contact</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+          <span class="nav__toggleLines" aria-hidden="true"></span>
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+
+        <div class="nav__menu" id="navMenu">
+          <a class="nav__link" href="#about">About</a>
+          <a class="nav__link" href="#skills">Skills</a>
+          <a class="nav__link" href="#experience">Experience</a>
+          <a class="nav__link" href="#education">Education</a>
+          <a class="nav__link" href="#contact">Contact</a>
+          <button class="btn btn--ghost themeBtn" id="themeToggle" type="button" aria-label="Toggle theme">
+            <span id="themeIcon" aria-hidden="true">☾</span>
+          </button>
+        </div>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <!-- HERO -->
+  <!-- Hero -->
+  <main>
     <section class="hero">
-      <div class="hero-grid">
-
-        <!-- LEFT -->
-        <div class="card hero-main reveal">
-          <h1 class="hero-title">
-            Hi, I’m <span class="accent">Bhargav Vaddepally</span>
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="eyebrow">Senior Python Engineer • Cloud • Microservices</p>
+          <h1 class="hero__title">
+            Building reliable, high-throughput backend platforms
+            <span class="accent">for fintech, healthcare, and e-commerce.</span>
           </h1>
-        
-          <h2 class="hero-subtitle">
-            Sr Software Developer | Backend Developer | Python Developer
-          </h2>
-        
-          <p class="lead">
-            Passionate about creating innovative solutions through code.
-            I specialize in building <strong>enterprise-grade applications</strong> in the
-            <strong>Python ecosystem</strong>, <strong>web architecture</strong>, and
-            <strong>cloud-native applications</strong>.
+
+          <p class="hero__subtitle">
+            7+ years architecting distributed systems with <strong>FastAPI</strong>, <strong>Django</strong>, <strong>asyncio</strong>,
+            and cloud-native infrastructure across <strong>AWS</strong>, <strong>Kubernetes</strong>, and <strong>Terraform</strong>.
+            Focused on scalable microservices, observability, and automation-first delivery.
           </p>
-        
-          <div class="cta-row">
-            <a class="btn btn-primary" href="#projects">
-              <span>View Projects</span> <span class="mono">↓</span>
-            </a>
-            <a class="btn btn-ghost" href="https://github.com/YOUR_GITHUB" target="_blank" rel="noreferrer">
-              GitHub <span class="mono">↗</span>
-            </a>
-            <a class="btn btn-ghost" href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noreferrer">
-              LinkedIn <span class="mono">↗</span>
-            </a>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#experience">View Experience</a>
+            <a class="btn btn--secondary" href="#contact">Contact</a>
           </div>
-        </div>
 
-        <!-- RIGHT (replaces Fast links) -->
-        <aside class="card hero-side reveal">
-          <div class="stat">
-            <div class="k">Let’s Connect</div>
-
-            <div class="v" style="display:grid; gap:14px; margin-top:14px; color:rgba(255,255,255,.86);">
-
-              <div style="display:flex; gap:12px; align-items:center;">
-                <span class="mono">📍</span>
-                <span>Carbondale, Illinois</span>
+          <div class="hero__meta">
+            <div class="metaCard">
+              <div class="metaCard__label">Location</div>
+              <div class="metaCard__value">Carbondale, Illinois</div>
+            </div>
+            <div class="metaCard">
+              <div class="metaCard__label">Email</div>
+              <div class="metaCard__value">
+                <a href="mailto:vaddepallybhargav99@gmail.com">vaddepallybhargav99@gmail.com</a>
               </div>
-
-              <div style="display:flex; gap:12px; align-items:center;">
-                <span class="mono">📞</span>
-                <a href="tel:+16184346085" style="font-weight:700; color:rgba(255,255,255,.9);">
-                  618 434 6085
-                </a>
+            </div>
+            <div class="metaCard">
+              <div class="metaCard__label">Phone</div>
+              <div class="metaCard__value">
+                <a href="tel:+16184346085">+1 (618) 434 6085</a>
               </div>
-
-              <div style="display:flex; gap:12px; align-items:center;">
-                <span class="mono">✉️</span>
-                <a href="mailto:vaddepallybhargav99@gmail.com" style="font-weight:700; color:rgba(255,255,255,.9);">
-                  vaddepallybhargav99@gmail.com
-                </a>
-              </div>
-
-              <div style="display:flex; gap:12px; align-items:center;">
-                <span class="mono">in</span>
-                <a href="https://www.linkedin.com/in/YOUR_LINKEDIN"
-                   target="_blank"
-                   rel="noreferrer"
-                   style="font-weight:700; color:rgba(255,255,255,.9);">
-                  LinkedIn Profile ↗
-                </a>
-              </div>
-
             </div>
           </div>
+
+          <div class="linksRow">
+            <!-- Replace # with your actual URLs -->
+            <a class="chip" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="chip" href="#" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="chip" href="#" target="_blank" rel="noreferrer">Portfolio</a>
+            <a class="chip" href="#" target="_blank" rel="noreferrer">Medium</a>
+          </div>
+        </div>
+
+        <aside class="hero__panel">
+          <div class="panelCard">
+            <h2 class="panelCard__title">Professional Summary</h2>
+            <p class="panelCard__text">
+              Senior Python Engineer with 7+ years of experience architecting and scaling high-throughput distributed systems across
+              Fintech, Healthcare, and E-commerce. Expert in FastAPI, Django, asyncio, and cloud-native infrastructure on AWS/Kubernetes/Terraform.
+              Proven track record decomposing monoliths into resilient, event-driven microservices that support millions of global transactions.
+            </p>
+
+            <div class="panelCard__highlights">
+              <div class="pill">Microservices</div>
+              <div class="pill">Event-Driven</div>
+              <div class="pill">AWS</div>
+              <div class="pill">Kubernetes</div>
+              <div class="pill">Terraform</div>
+              <div class="pill">Observability</div>
+            </div>
+          </div>
+
+          <div class="panelCard panelCard--compact">
+            <h3 class="panelCard__title">Core Strengths</h3>
+            <ul class="checklist">
+              <li>High-performance APIs & distributed backend design</li>
+              <li>Cloud-native delivery with IaC and CI/CD</li>
+              <li>Reliability engineering: SLAs, timeouts, resilience patterns</li>
+              <li>End-to-end observability: metrics, logs, dashboards</li>
+            </ul>
+          </div>
         </aside>
-
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="section-head">
-        <div>
-          <h2 class="section-title">About</h2>
-        </div>
-      </div>
-
-      <div class="grid-3">
-        <div class="item reveal">
-          <h3>What I do</h3>
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="sectionHeader">
+          <h2>About</h2>
           <p>
-            I design, provision, and operate cloud infrastructure with automation as the default.
-            I care about stability, repeatability, and clean handoffs (docs + runbooks).
+            I build backend systems that are designed to scale, easy to operate, and safe by default.
+            My focus is on pragmatic engineering: clean boundaries, measurable reliability, and automation that reduces operational drag.
           </p>
         </div>
-        <div class="item reveal">
-          <h3>How I think</h3>
-          <p>
-            Traditional engineering discipline: measurable reliability, clear ownership, and predictable deployment patterns.
-            Modern tooling only matters if it reduces operational risk.
-          </p>
-        </div>
-        <div class="item reveal">
-          <h3>What I’m aiming for</h3>
-          <p>
-            DevOps / SRE / Cloud roles where I can build platforms, not just scripts — and drive outcomes: uptime, speed, cost control.
-          </p>
-        </div>
-      </div>
-    </section>
 
-    <!-- SKILLS -->
-    <section id="skills">
-      <div class="section-head">
-        <div>
-          <h2 class="section-title">Skills</h2>
-          <p class="section-sub">Keep this tight. Recruiters scan. Engineers verify.</p>
-        </div>
-      </div>
-
-      <div class="grid-3">
-        <div class="item reveal">
-          <h3>Cloud & Infra</h3>
-          <p>AWS, EC2, VPC, Route53, IAM, Load Balancing, S3, Linux.</p>
-          <div class="tags">
-            <span class="tag">VPC / Subnets</span><span class="tag">Security Groups</span><span class="tag">DNS</span>
+        <div class="aboutGrid">
+          <div class="card">
+            <h3>What I do</h3>
+            <p>
+              I design and deliver cloud-native Python services and modernize legacy platforms into resilient microservices
+              with strong testing, clear APIs, and production-grade observability.
+            </p>
           </div>
-        </div>
-        <div class="item reveal">
-          <h3>DevOps Tooling</h3>
-          <p>Terraform, Ansible, GitHub Actions, Docker, Kubernetes, Helm.</p>
-          <div class="tags">
-            <span class="tag">IaC</span><span class="tag">CI/CD</span><span class="tag">Containers</span>
+
+          <div class="card">
+            <h3>How I work</h3>
+            <p>
+              Traditional fundamentals first (clean architecture, SDLC discipline, reviews), plus forward-thinking execution
+              (IaC, CI/CD, containerization, event-driven patterns). Less chaos, more repeatability.
+            </p>
           </div>
-        </div>
-        <div class="item reveal">
-          <h3>Python & Ops</h3>
-          <p>APIs, automation scripts, service health checks, log parsing, integrations.</p>
-          <div class="tags">
-            <span class="tag">FastAPI</span><span class="tag">Automation</span><span class="tag">Scripting</span>
+
+          <div class="card">
+            <h3>What I optimize</h3>
+            <p>
+              Latency, throughput, reliability, and developer velocity — without compromising security or compliance.
+              If it can be measured, it can be improved.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <div class="section-head">
-        <div>
-          <h2 class="section-title">Projects</h2>
-          <p class="section-sub">Write these like case studies: problem → approach → result.</p>
-        </div>
-      </div>
-
-      <div class="grid-3">
-        <article class="item reveal">
-          <h3>Kubernetes AI Microservice</h3>
-          <p>
-            Scalable inference service with CI/CD, monitoring, and deployment patterns that mirror production.
-          </p>
-          <div class="tags">
-            <span class="tag">K8s</span><span class="tag">GitHub Actions</span><span class="tag">Prometheus</span>
-          </div>
-          <div class="cta-row" style="margin-top:14px;">
-            <a class="pill" href="https://github.com/YOUR_GITHUB/YOUR_REPO" target="_blank" rel="noreferrer">Repo ↗</a>
-            <a class="pill" href="#" target="_blank" rel="noreferrer">Live Demo ↗</a>
-          </div>
-        </article>
-
-        <article class="item reveal">
-          <h3>3-Tier App Automation</h3>
-          <p>
-            Provisioned and configured a full 3-tier stack using idempotent automation and clean inventory patterns.
-          </p>
-          <div class="tags">
-            <span class="tag">Ansible</span><span class="tag">Linux</span><span class="tag">Nginx</span>
-          </div>
-          <div class="cta-row" style="margin-top:14px;">
-            <a class="pill" href="https://github.com/YOUR_GITHUB/YOUR_REPO" target="_blank" rel="noreferrer">Repo ↗</a>
-          </div>
-        </article>
-
-        <article class="item reveal">
-          <h3>Terraform Infrastructure Kit</h3>
-          <p>
-            Reusable Terraform modules with sane defaults, remote state, and clean variable design.
-          </p>
-          <div class="tags">
-            <span class="tag">Terraform</span><span class="tag">AWS</span><span class="tag">IaC</span>
-          </div>
-          <div class="cta-row" style="margin-top:14px;">
-            <a class="pill" href="https://github.com/YOUR_GITHUB/YOUR_REPO" target="_blank" rel="noreferrer">Repo ↗</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <div class="section-head">
-        <div>
-          <h2 class="section-title">Experience</h2>
-          <p class="section-sub">Keep bullets measurable. “What changed because of you?”</p>
-        </div>
-      </div>
-
-      <div class="timeline">
-        <div class="tl reveal">
-          <div class="top">
-            <div class="role">Software Engineer • Company Name</div>
-            <div class="meta">YYYY — YYYY • Location</div>
-          </div>
-          <ul>
-            <li>Automated infrastructure provisioning and deployments to reduce manual setup time and configuration drift.</li>
-            <li>Built CI/CD workflows and introduced repeatable release practices for faster delivery.</li>
-            <li>Improved operational visibility by standardizing logs/metrics and documenting runbooks.</li>
-          </ul>
+    <!-- Skills -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="sectionHeader">
+          <h2>Technical Skills</h2>
+          <p>Focused on backend engineering, cloud platforms, automation, and observability.</p>
         </div>
 
-        <div class="tl reveal">
-          <div class="top">
-            <div class="role">Graduate Projects • Cloud/DevOps Track</div>
-            <div class="meta">YYYY — Present</div>
+        <div class="skillsGrid">
+          <div class="skillCard">
+            <h3>Programming</h3>
+            <ul>
+              <li>Python</li>
+              <li>JavaScript</li>
+              <li>C</li>
+              <li>Shell: Bash / PowerShell</li>
+            </ul>
           </div>
-          <ul>
-            <li>Designed a Kubernetes-based microservice architecture with monitoring and deployment automation.</li>
-            <li>Implemented reliability-minded patterns: health checks, alerts, rollbacks, and clean configuration.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
 
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="section-head">
-        <div>
-          <h2 class="section-title">Contact</h2>
-          <p class="section-sub">Make it easy to hire you. No friction.</p>
-        </div>
-      </div>
-
-      <div class="contact">
-        <div class="item reveal">
-          <h3>Let’s connect</h3>
-          <p>
-            If you’re hiring for DevOps / SRE / Cloud / Python roles, I’ll bring structure and momentum.
-            Share the job link and I’ll respond with a tailored alignment.
-          </p>
-          <div class="cta-row" style="margin-top:14px;">
-            <a class="btn btn-primary" href="mailto:vaddepallybhargav99@gmail.com">Email Me</a>
-            <a class="btn btn-ghost" href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          <div class="skillCard">
+            <h3>Python Ecosystem</h3>
+            <ul>
+              <li>FastAPI</li>
+              <li>Django / DRF</li>
+              <li>Flask</li>
+              <li>Celery</li>
+              <li>asyncio</li>
+            </ul>
           </div>
-        </div>
 
-        <div class="item reveal">
-          <h3>Quick info</h3>
-          <div class="tags" style="margin-top:10px;">
-            <span class="tag">Email: vaddepallybhargav99@gmail.com</span>
-            <span class="tag">Phone: 6184346085</span>
-            <span class="tag">Location: Carbondale, IL</span>
-            <span class="tag">Open to: DevOps / SRE</span>
+          <div class="skillCard">
+            <h3>Architecture & APIs</h3>
+            <ul>
+              <li>Microservices</li>
+              <li>Event-Driven Architecture</li>
+              <li>RESTful APIs</li>
+              <li>GraphQL</li>
+              <li>RabbitMQ / Kafka</li>
+            </ul>
+          </div>
+
+          <div class="skillCard">
+            <h3>Data & Storage</h3>
+            <ul>
+              <li>PostgreSQL / MySQL</li>
+              <li>MongoDB</li>
+              <li>Redis (Caching)</li>
+              <li>Elasticsearch</li>
+              <li>Django ORM / SQLAlchemy</li>
+            </ul>
+          </div>
+
+          <div class="skillCard">
+            <h3>Cloud Platforms</h3>
+            <ul>
+              <li>AWS (Primary)</li>
+              <li>Microsoft Azure</li>
+              <li>GCP</li>
+            </ul>
+          </div>
+
+          <div class="skillCard">
+            <h3>DevOps, IaC, Observability</h3>
+            <ul>
+              <li>Docker, Kubernetes, Helm</li>
+              <li>Terraform, Ansible</li>
+              <li>Jenkins, GitHub Actions, Harness</li>
+              <li>Prometheus, Grafana</li>
+              <li>ELK, Azure Monitor</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="footer">
-      Built with GitHub Pages • Clean engineering, modern aesthetics • © <span id="year"></span> Bhargav Vaddepally
-    </div>
+    <!-- Experience -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="sectionHeader">
+          <h2>Professional Experience</h2>
+          <p>Impact-driven delivery across fintech payments, healthcare data systems, and retail e-commerce platforms.</p>
+        </div>
+
+        <div class="timeline">
+          <!-- Western Union -->
+          <article class="timelineItem card">
+            <div class="timelineItem__top">
+              <div>
+                <h3>Western Union — Austin, TX</h3>
+                <p class="muted">Senior Python Developer | Cloud & Payments Platform</p>
+              </div>
+              <div class="timelineItem__date">Mar 2024 – Present</div>
+            </div>
+
+            <p class="projectDesc">
+              Modernized money transfer and payment processing by decomposing legacy services into cloud-native Python microservices,
+              prioritizing reliability, security, and high-throughput transaction processing across global regions.
+            </p>
+
+            <ul class="bullets">
+              <li>Engineered backend services with FastAPI and Django, migrating core transaction logic to cloud-native microservices supporting global growth.</li>
+              <li>Designed event-driven workflows using RabbitMQ and asyncio, improving end-to-end processing speed across international corridors.</li>
+              <li>Built a multi-tier Redis caching strategy for exchange rates and session data, reducing database read load and improving API latency.</li>
+              <li>Implemented hybrid REST + GraphQL APIs to unify internal service communication and partner integrations while maintaining high availability.</li>
+              <li>Established PyTest testing standards with advanced mocking, raising coverage and reducing production regressions.</li>
+              <li>Automated AWS infrastructure provisioning using Terraform and Ansible to enable repeatable deployments and reduce manual errors.</li>
+              <li>Improved reliability via SLAs, timeouts, resilience patterns, and end-to-end observability for audit-ready transaction tracing.</li>
+              <li>Containerized services with Docker and deployed to Kubernetes (EKS), enabling horizontal scaling and operational consistency.</li>
+            </ul>
+
+            <div class="tagRow">
+              <span class="tag">FastAPI</span><span class="tag">Django</span><span class="tag">RabbitMQ</span><span class="tag">Redis</span>
+              <span class="tag">PostgreSQL</span><span class="tag">EKS</span><span class="tag">Terraform</span><span class="tag">Prometheus/Grafana</span>
+            </div>
+          </article>
+
+          <!-- Legacy Health -->
+          <article class="timelineItem card">
+            <div class="timelineItem__top">
+              <div>
+                <h3>Legacy Health — Portland, OR</h3>
+                <p class="muted">Senior Python Developer | Healthcare Systems</p>
+              </div>
+              <div class="timelineItem__date">Nov 2021 – Feb 2024</div>
+            </div>
+
+            <p class="projectDesc">
+              Developed and supported secure, scalable backend systems for healthcare applications, enabling patient data exchange,
+              internal workflows, and analytics with strong compliance and auditability.
+            </p>
+
+            <ul class="bullets">
+              <li>Built Django REST Framework APIs for patient and clinical workflows with secure, consistent data exchange.</li>
+              <li>Implemented RBAC and audit logging aligned to healthcare compliance and internal security standards.</li>
+              <li>Added asynchronous background processing for ingestion and report generation to improve API responsiveness.</li>
+              <li>Integrated PostgreSQL and MongoDB for structured and semi-structured datasets using Django ORM and PyMongo.</li>
+              <li>Automated infrastructure provisioning using Terraform and Ansible to reduce manual setup errors.</li>
+              <li>Centralized logging with ELK Stack to improve incident triage and operational visibility.</li>
+              <li>Containerized and deployed services on Kubernetes for scalable and portable deployments.</li>
+            </ul>
+
+            <div class="tagRow">
+              <span class="tag">Django/DRF</span><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span class="tag">Docker</span>
+              <span class="tag">Kubernetes</span><span class="tag">Terraform</span><span class="tag">ELK</span>
+            </div>
+          </article>
+
+          <!-- Sephora -->
+          <article class="timelineItem card">
+            <div class="timelineItem__top">
+              <div>
+                <h3>Sephora — New York, NY</h3>
+                <p class="muted">Senior Python Engineer | E-Commerce & Personalization</p>
+              </div>
+              <div class="timelineItem__date">Jan 2020 – Oct 2021</div>
+            </div>
+
+            <p class="projectDesc">
+              Built scalable backend services powering e-commerce, personalization, and analytics platforms for high-traffic retail operations
+              and real-time customer engagement.
+            </p>
+
+            <ul class="bullets">
+              <li>Designed FastAPI microservices supporting product catalog, pricing, and personalization workflows at high request volumes.</li>
+              <li>Built event-driven services to process behavior signals and recommendation inputs in near real time.</li>
+              <li>Optimized MongoDB + PostgreSQL models for read/write performance across product and customer domains.</li>
+              <li>Developed CI/CD pipelines using GitHub Actions for frequent, low-risk releases.</li>
+              <li>Implemented performance/load testing to ensure stability during promotional traffic spikes.</li>
+              <li>Improved observability with Prometheus, Grafana, and ELK to support capacity planning.</li>
+            </ul>
+
+            <div class="tagRow">
+              <span class="tag">FastAPI</span><span class="tag">AWS</span><span class="tag">MongoDB</span><span class="tag">GitHub Actions</span>
+              <span class="tag">Observability</span>
+            </div>
+          </article>
+
+          <!-- Evolve -->
+          <article class="timelineItem card">
+            <div class="timelineItem__top">
+              <div>
+                <h3>Evolve Technologies — Hyderabad, India</h3>
+                <p class="muted">Python Developer</p>
+              </div>
+              <div class="timelineItem__date">Jul 2018 – Dec 2019</div>
+            </div>
+
+            <p class="projectDesc">
+              Designed and delivered backend platforms and automation frameworks for enterprise clients, focusing on maintainability and DevOps-driven delivery.
+            </p>
+
+            <ul class="bullets">
+              <li>Architected Python microservices using Django and FastAPI with clean separation of concerns and scalable patterns.</li>
+              <li>Built REST APIs and background workers for workflow automation and data processing.</li>
+              <li>Implemented coding standards and quality gates with Black, Flake8, isort, and PyTest.</li>
+              <li>Led database design using MySQL/PostgreSQL and managed schema migrations with Alembic.</li>
+              <li>Automated infrastructure provisioning using Terraform and Ansible; deployed via Docker + Kubernetes.</li>
+              <li>Implemented failover and HA patterns for managed SQL instances to support DR requirements.</li>
+            </ul>
+
+            <div class="tagRow">
+              <span class="tag">Django</span><span class="tag">FastAPI</span><span class="tag">Kubernetes</span><span class="tag">Terraform</span>
+              <span class="tag">Ansible</span><span class="tag">Alembic</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section" id="education">
+      <div class="container">
+        <div class="sectionHeader">
+          <h2>Education</h2>
+          <p>Strong CS foundation, applied to production-grade cloud and backend engineering.</p>
+        </div>
+
+        <div class="eduGrid">
+          <div class="card">
+            <h3>Master’s in Computer Science</h3>
+            <p class="muted">Southern Illinois University, Carbondale</p>
+          </div>
+          <div class="card">
+            <h3>Bachelor’s in Computer Science</h3>
+            <p class="muted">NGIT, Hyderabad, India</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section--soft" id="contact">
+      <div class="container">
+        <div class="sectionHeader">
+          <h2>Contact</h2>
+          <p>If you’re hiring for Python / Backend / Cloud roles, let’s connect.</p>
+        </div>
+
+        <div class="contactGrid">
+          <div class="card">
+            <h3>Reach out</h3>
+            <p class="muted">Fastest response via email.</p>
+            <div class="contactList">
+              <a class="contactItem" href="mailto:vaddepallybhargav99@gmail.com">
+                <span class="contactLabel">Email</span>
+                <span class="contactValue">vaddepallybhargav99@gmail.com</span>
+              </a>
+              <a class="contactItem" href="tel:+16184346085">
+                <span class="contactLabel">Phone</span>
+                <span class="contactValue">+1 (618) 434 6085</span>
+              </a>
+              <div class="contactItem">
+                <span class="contactLabel">Location</span>
+                <span class="contactValue">Carbondale, Illinois</span>
+              </div>
+            </div>
+
+            <div class="linksRow linksRow--contact">
+              <!-- Replace with real URLs -->
+              <a class="chip" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a class="chip" href="#" target="_blank" rel="noreferrer">GitHub</a>
+              <a class="chip" href="#" target="_blank" rel="noreferrer">Medium</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Quick note</h3>
+            <form id="copyEmailForm">
+              <label class="field">
+                <span class="field__label">Suggested subject</span>
+                <input class="input" type="text" value="Opportunity: Senior Python / Backend / Cloud Engineer" readonly />
+              </label>
+
+              <label class="field">
+                <span class="field__label">Email to copy</span>
+                <div class="copyRow">
+                  <input class="input" id="emailToCopy" type="text" value="vaddepallybhargav99@gmail.com" readonly />
+                  <button class="btn btn--secondary" id="copyBtn" type="button">Copy</button>
+                </div>
+              </label>
+
+              <p class="muted small" id="copyStatus" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p class="muted small">© <span id="year"></span> Bhargav Vaddepally. Built for GitHub Pages.</p>
+        <a class="muted small" href="#top">Back to top ↑</a>
+      </div>
+    </footer>
   </main>
 
-  <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Reveal on scroll
-    const els = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) e.target.classList.add('show');
-      });
-    }, { threshold: 0.12 });
-    els.forEach(el => io.observe(el));
-
-    // Optional: highlight active nav link
-    const sections = ['about','skills','projects','experience','contact'].map(id => document.getElementById(id));
-    const navLinks = [...document.querySelectorAll('.nav-links a')];
-
-    const navIO = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const id = entry.target.getAttribute('id');
-        navLinks.forEach(a => a.style.opacity = a.getAttribute('href') === '#' + id ? '1' : '.72');
-      });
-    }, { threshold: 0.35 });
-
-    sections.forEach(s => s && navIO.observe(s));
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
