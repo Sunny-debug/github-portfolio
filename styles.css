@@ -528,4 +528,16 @@
     }
     .nav__menu.open{ display:flex; }
     .nav__link{ padding: 12px; }
-  }  
+  }
+  
+/* Fix long text (email/links) overflowing cards */
+.metaCard {
+    min-width: 0;              /* important for grid children */
+  }
+  
+  .metaCard__value,
+  .metaCard__value a {
+    overflow-wrap: anywhere;   /* best for emails/URLs */
+    word-break: break-word;    /* fallback */
+  }
+    
